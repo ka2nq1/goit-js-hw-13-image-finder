@@ -17,13 +17,11 @@ const getFormSubmit = (event) => {
     if (inputValue.length > 1) {
         fetchImages(inputValue, page, API_KEY)
             .then(images =>{
-                console.log(images)
-                addToMarkup(images)
-                refs.btnLoad.style.display = "block";
+                addToMarkup(images)               
+                refs.btnLoad.style.display = "block";               
             })
         .catch(err => console.log(err))
     }
-   
 }
 
 refs.form.addEventListener('submit', getFormSubmit)
